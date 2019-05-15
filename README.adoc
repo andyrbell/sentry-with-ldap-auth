@@ -1,0 +1,4 @@
+= Sentry on-build container with sentry-ldap-auth installed
+
+Attempting to work around this https://github.com/Banno/getsentry-ldap-auth/issues/30[issue] when installing sentry-ldap-auth via requirements.txt
+
