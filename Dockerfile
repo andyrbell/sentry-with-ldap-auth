@@ -8,6 +8,9 @@ RUN apt-get update \
     python-dev \
     libldap2-dev \
     libssl-dev \
+    slapd \
+    ldap-utils \
+    vim \
  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN pip install sentry-ldap-auth
