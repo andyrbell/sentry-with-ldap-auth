@@ -2,8 +2,10 @@ FROM sentry:9.1
 
 WORKDIR /usr/src/sentry
 
-RUN apt-get update \
- && apt-get install -y \
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get -qq update \
+ && apt-get install -qqy --no-install-recommends \
     libsasl2-dev \
     python-dev \
     libldap2-dev \
@@ -11,7 +13,7 @@ RUN apt-get update \
     slapd \
     ldap-utils \
     vim \
- && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+ && apt-get -qq clean
 
 RUN pip install sentry-ldap-auth
 
